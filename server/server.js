@@ -18,19 +18,9 @@ io.on('connection', socket => {
     console.log('Client disconnected!');
   });
 
-  socket.on('createEmail', newEmail => {
-    console.log('createEmail:', newEmail);
-  });
-
   socket.on('createMessage', newMessage => {
     newMessage.createdAt = 1232132131;
     console.log('newMessage:', newMessage);
-  })
-
-  socket.emit('newEmail', {
-    from: 'luka@example.com',
-    text: 'Hey, what\'s going on?',
-    createAt: 123
   });
 
   socket.emit('newMessage', {
